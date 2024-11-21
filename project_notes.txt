@@ -1,0 +1,9 @@
+Project folder structure:
+    1. The css, js and img folders along with the html file available directly under the repository project_art101 will be used for final webpage. For time being, the fixed styling documents for site and images/gifs/audio can stored be stored.
+    2. The sub-folder project_inter will be used for each project assignment submission and should not be simultaneously updated by everyone. 
+            i. The files of the webpage design agreed upon should be placed here after validated by team members for final assignment submission. 
+            ii. The initial files can be created by one and then be modified by others in their own folders. 
+            iii. Followed by which, a common webpage can be designed or agreed upon during team meeting and this design specific files will be placed here.
+    3. People working on coding, should create separate folders in their names, each with similar structure [CSS, JS and IMG folder, a HTML file]. After discussion and validation, the files in the project_inter should be updated.
+
+Ensure to sync changes to the repository at regular intervals.
