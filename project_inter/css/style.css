@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: cursive;
+}
+
+header {
+    background-color: navy;
+}
+
+header > div {
+    padding: 15px;
+}
+
+header > div h1.title {
+    padding: 5px 15px;
+    color: aliceblue;
+    font-size: 2.5rem;
+    width: fit-content;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.736);
+
+    transition: all 0.5s allow-discrete;
+}
+
+header > div h1.title:hover {
+    border-radius: 5px;
+    color: navy;
+    background-color: aliceblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+}
+
+.homepage-starter .image-cover {
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+.homepage-starter .image-background {
+    width: 100%;
+    height: 800px;
+    background-color: rgba(0, 0, 0, 0.597);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.5s;
+}
+
+.homepage-starter .image-background:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.homepage-starter .image-background h1 {
+    text-align: center;
+    color: aliceblue;
+    padding: 20px;
+    font-size: 3rem;
+}
+
+.homepage-starter .image-background div > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-starter .image-background div > form input {
+    width: 200px;
+    margin: auto;
+    background-color: transparent;
+    color: aliceblue;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 5px solid white;
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+
+    transition: all 1s allow-discrete;
+}
+
+.homepage-starter .image-background div > form input:focus {
+    border-bottom: 5px solid red;
+}
+
+.homepage-starter .image-background div > form label {
+    font-size: 2rem;
+    margin: auto;
+    color: aliceblue;
+    margin-bottom: 3px;
+
+    transform: translateX(-40px);
+}
+
+.homepage-starter .image-background div > form .continue {
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 5px solid white;
+
+    transition: all 0.5s allow-discrete;
+}
+
+.homepage-starter .image-background div > form .continue:hover {
+    box-shadow: 0 0 10px white;
+    background-color: black;
+    color: aliceblue;
+}
+
+
+.projectInfo {
+    margin: 30px 60px;
+}
+
+.projectInfo h1 {
+    text-align: left;
+    font-size: 4rem;
+}
+
+
+.projectInfo div {
+    display: flex;
+}
+
+.projectInfo p {
+    margin-top: 20px;
+    font-size: 2.5rem;
+}
+
+.projectInfo img {
+    width: 25%;
+    height: auto;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#typed{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+
+h1{
+    justify-content: center;
+    font-size: 60px;
+    color: white;
+    text-align: center;
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings:"ROND" 0;
+  font-weight: bold;
+}
+
+#next{
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 15px;
+    border-style: dotted;
+}
