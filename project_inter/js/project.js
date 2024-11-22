@@ -6,15 +6,16 @@
 $(document).ready(function() {
  $("#continue").click(function(event) {
    event.preventDefault(); // Prevent the default form submission behavior
-   window.location.href = "../project.html"; // Redirect to the desired page
- });
-});
-
-// To redirect to first theme based on option selected in base question in first page
-$(document).ready(function() {
- $("#continue").click(function(event) {
-   event.preventDefault(); // Prevent the default form submission behavior
-   window.location.href = "../project.html"; // Redirect to the desired page
+   // Get the values from the input fields
+   const firstName = $("#fname").val();
+   const lastName = $("#lname").val();
+   // Check if both first name and last name are entered
+   if (firstName.trim() !== "" && lastName.trim() !== "") {
+     window.location.href = "./project.html"; // Redirect to the desired page
+   } else {
+     // Display an error message or alert if either field is empty
+     alert("Please enter both your first name and last name.");
+   }
  });
 });
 
