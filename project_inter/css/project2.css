@@ -36,7 +36,7 @@ h1{
 }
 
 .selected {
-    border-color: lemonchiffon;         /* Change border color when selected */
+    border-color: green;         /* Change border color when selected */
     transform: scale(1.1);        /* Slightly enlarge the selected image */
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Add a glowing green shadow */
 }
