@@ -46,30 +46,41 @@ h1{
 .answers {
     display: grid; /* Enables Grid Layout */
     grid-template-columns: repeat(2, 1fr); /* Create 4 equal-width columns */
-    gap: 20px; /* Space between columns */
+    gap: 50px; /* Space between columns */
 }
   
 /* Styling for each individual answer block */
-.answer {
-    padding: 10px;
-    background-color: lightgray;
-    text-align: center;
-    border: 1px solid black;
+button{
+    width: 400px;
+    height: 200px;
+    display: block;
+    margin: 0 auto; /* Center horizontally */
 }
+
+.home-button{
+    position: fixed;
+    width: 100px;
+    color: black;
+    background-color: lightgrey;
+    font-size: 12px;
+    font-style: normal;
+    padding: 5px 10px;
+    border-radius: 5px;
+    left: 10px;
+    bottom: 10px;
+    height: 40px;
+}
+
 
 /* Optional: Add some space between the answer divs */
   .answer p {
     margin-bottom: 10px;
 }
-#home{
-    position: fixed;
-    width: 15%;
-    color: black;
-    background-color: lightgrey;
-    font-size: 18px;
-    font-style: normal;
-    padding: 10px, 20px;
-    border-radius: 5px;
-    left: 10px;
-    bottom: 10px;
+.room-description {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Font family */
+    font-size: 30px;             /* Font size */
+    color: white;                 /* Text color */
+    line-height: 1.5;            /* Line spacing */
+    margin-top: 10px;            /* Add spacing if needed */
+    text-align: center;
 }

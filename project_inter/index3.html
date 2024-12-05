@@ -27,7 +27,7 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
   <!-- Include site-specific JS (for typing effect) at the bottom -->
-  <script type="text/javascript" src="./js/project3.js" defer></script>
+  <script type="text/javascript" src="./js/page3.js" defer></script>
 
   <style>
 		@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
@@ -39,39 +39,23 @@
   <main id="intro">
     <section>
       <h1>Sammy More</h1>
-      <h1>Question 1</h1>
+      <div class="major section">
+        <div class="container">
+          <div class="adventure-section">
+            <div id="js-output">
+              
+              <ul class="exits"></ul>
 
-      <div id="question1">
-        <p>You wake up in the middle of a forest, with no recollection of how you got there. Where do you choose to go?</p>
-      </div>
-
-      <div class="answers">
-        <div id="answer1" class="answer">
-          <p>Towards the smell of food</p>
-          <button id="food">
-            <a href="./page4.html"> Option 1 </a>
-          </button>
-        </div>
-    
-        <div id="answer2" class="answer">
-          <p>Deeper into the forest to explore</p>
-          <button id="explore">Option 2</button>
-        </div>
-    
-        <div id="answer3" class="answer">
-          <p>In search of a warm place to sleep</p>
-          <button id="sleep">Option 3</button>
-        </div>
-    
-        <div id="answer4" class="answer">
-          <p>Towards the sound of music</p>
-          <button id="music">Option 4</button>
+              <li onclick="newRoom(food)"> "Towards the smell of food." </li>
+  
+              <li onclick="newRoom(forest)"> "Deeper into the forest to explore." </li>
+            </div>
+          </div>    
         </div>
       </div>
-    </section>
     <nav id="links">
 			<!-- Put links to other pages (including the homepage) here. -->
-			 <button id="home">
+			 <button id="home" class="home-button">
              	<a href="./index.html">Back to Homepage</a>
 			</button>
 		</nav>
