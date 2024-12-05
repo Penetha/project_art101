@@ -18,7 +18,7 @@ const rooms = {
         ]
     },
     food: {
-        name: "Towards the smell of food",
+        name: "Towards the Smell of Food",
         description: "As you head towards the smell of food, you come across a small cabin in the woods, where you hear humming coming from inside. What do you do?",
         exitOptions: [
             { key: "window", text: "Slip in through the open side window" },
@@ -26,7 +26,7 @@ const rooms = {
         ]
     },
     window: {
-        name: "Through the window",
+        name: "Through the Window",
         description: "You slip in through the side window and fall to the ground with a crash. The humming stops. You look up and see:",
         exitOptions: [
             { key: "mother", text: "Your mother, smiling down at you, holding a bowl of your favorite food." },
@@ -34,7 +34,7 @@ const rooms = {
         ]
     },
     mother: {
-        name: "Dining with mother",
+        name: "Dining with Mother",
         description: "Your mother invites you to eat in the dining room as she hums a song from your childhood. What do you do?",
         exitOptions: [
             { key: "eat", text: "Eat the food she graciously offered." },
@@ -42,16 +42,44 @@ const rooms = {
         ]
     },
     eat: {
-        name: "Consuming the food",
+        name: "Consuming the Food",
         description: "As your stomach grumbles, you quickly scarf down the food. Yet, the more you eat, the more the world around you begins to melt away.",
         exitOptions: [
             { key: "HMMMM", text: "HMMMM" }
         ]
     },
     HMMMM: {
-        name: "Waking up",
+        name: "Waking Up",
         description: "You suddenly wake up, back in your house. You should not dorm... You will miss home too much, and you are too trusting for your own good."
     },
+    run: {
+        name: "Running Away",
+        description: "You run. As quickly as your legs can take you. You make it outside and hear a scream. It's coming from the cabin. What do you do?",
+        exitOptions: [
+            { key: "turn", text: "Turn around and find our who was screaming and why."},
+            { key: "leave", text: "Go back to exploring where the smell of the food is coming from."},
+        ]
+    },
+    turn: {
+        name: "Who Is Screaming",
+        description: "Against your better judgement, your turn around to check on the person who was screaming. You go in the house to investigate. Once you open the door, a shadow appears. What are you gonna do?",
+        exitOptions: [
+            { key: "continue", text: "Comtinue approching the shadow."},
+            { key: "leave", text: "Leave, this was a horrible idea..."},
+        ]
+    },
+    continue: {
+        name: "OOOHHH",
+        description: "'Thank you', the shadow says. It reaches out to you and embraces you. It's embrace is calming and before you know it, you are back in your dorm room."
+    },
+    leave: {
+       name: "Back to the Beginning",
+        description: "You decide to leave and find yourself back where you started.",
+        exitOptions: [
+            { key: "cul", text: "Start Over" } 
+        ]
+    },
+
     knock: {
         name: "Knocking on the door",
         description: "You knock on the door again and again, but no one answers. What do you do?",
@@ -96,7 +124,7 @@ function clearDisplayArea() {
     if (output) {
         output.innerHTML = "";
     }
-}
+};
 
 // Function to display the current room
 function displayCurrentRoom(room) {
@@ -105,7 +133,7 @@ function displayCurrentRoom(room) {
         output.innerHTML += `<h1>${room.name}</h1>`;
         output.innerHTML += `<p>${room.description}</p>`;
     }
-}
+};
 
 // Function to display the available exits
 function displayCurrentExits(room) {
@@ -115,7 +143,7 @@ function displayCurrentExits(room) {
             output.innerHTML += `<button onclick="newRoom('${option.key}')">${option.text}</button>`;
         });
     }
-}
+};
 
 // Function to move to a new room
 function newRoom(nextRoom) {
@@ -128,7 +156,7 @@ function newRoom(nextRoom) {
     clearDisplayArea();
     displayCurrentRoom(currentRoomObj);
     displayCurrentExits(currentRoomObj);
-}
+};
 
 // Adding a class to the descriptions in ordert to style it
 function displayCurrentRoom(room) {
