@@ -36,7 +36,7 @@ const rooms = {
     },
     quest3: {
         name: "Something or Someone Is Near...",
-        description: "Eventually a voice begins to talk. You look around for a moment and realize a koi fish is talking to you! It begins to say:",
+        description: "Eventually a voice begins to speak. You look around for a moment and realize a koi fish is speaking to you! It begins to say:",
         image: "./img/koi-pond.png",
         exitOptions: [
             { key: "quest4", text: "What are you doing here? Don’t you have a test tomorrow?", value: 20 },
