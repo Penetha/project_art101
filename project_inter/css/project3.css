@@ -2,59 +2,13 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-#typed{
-    font-size: 35px;
-    color: white;
-    text-align: center;
-}
 
 h1{
     justify-content: center;
-    font-size: 60px;
+    font-size: 40px;
     color: white;
     text-align: center;
-  font-family: "Doto", sans-serif;
-  font-optical-sizing: auto;
-  font-variation-settings:"ROND" 0;
-  font-weight: bold;
-}
-
-#next{
-    position: absolute;
-    font-size: 20px;
-    border-style: solid;
-    display: block;
-    margin: 0 auto;
-    left: 40%;
-    top: 55%;
-    width: 300px;
-    height: 50px;
-    background-color: silver;
-    font-family: cursive;
-    box-shadow: darkgray;
-    font-style: italic;
-}
-
-#question1{
-    font-size: 35px;
-    font-family: cursive;
-    color: white;
-    text-align: center;
-}
-
-/* Container to hold the answer divs */
-.answers {
-    display: grid; /* Enables Grid Layout */
-    grid-template-columns: repeat(2, 1fr); /* Create 4 equal-width columns */
-    gap: 50px; /* Space between columns */
-}
-  
-/* Styling for each individual answer block */
-button{
-    width: 400px;
-    height: 200px;
-    display: block;
-    margin: 0 auto; /* Center horizontally */
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .home-button{
@@ -71,16 +25,57 @@ button{
     height: 40px;
 }
 
-
-/* Optional: Add some space between the answer divs */
-  .answer p {
-    margin-bottom: 10px;
-}
-.room-description {
-    font-family: Georgia, 'Times New Roman', Times, serif; /* Font family */
-    font-size: 30px;             /* Font size */
-    color: white;                 /* Text color */
-    line-height: 1.5;            /* Line spacing */
-    margin-top: 10px;            /* Add spacing if needed */
+#js-output {
+    margin-bottom: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+#score-display {
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    position: fixed;
+    width: 100px;
+    font-style: normal;
+    padding: 5px 10px;
+    border-radius: 5px;
+    left: 90%;
+    bottom: 10px;
+    height: 40px;
+}
+
+.description-container {
+    padding: 20px;
+    background-color: #f0f0f0; /* Light background for the description */
+    border: 2px solid #007BFF; /* Blue border around the description */
+    border-radius: 8px; /* Rounded corners for the container */
+    margin-bottom: 20px; /* Space after each description */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.final-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for the image */
+}
+
+.room-description {
+    padding: 15px;
+    background-color: #f0f0f0; /* Light background */
+    border: 2px solid #007BFF; /* Blue border */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below the description */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+

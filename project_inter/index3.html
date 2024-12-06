@@ -4,11 +4,18 @@
   <style>
     body{
       background-image: url('./img/default.png');
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
+        margin: 0;
+        padding: 0; 
+        height: 100%; 
+        width: 100%; 
+        background-size: cover; 
+        background-position: center; 
+        background-repeat: no-repeat; 
+        top: 0;
+        left: 0;
+        z-index: -1; 
     }
-  </style>
+</style>
 
   <!-- This title is used for tabs and bookmarks -->
   <title>Sammy More</title>
@@ -36,29 +43,29 @@
 </head>
 
 <body>
+  
   <main id="intro">
     <section>
-      <h1>Sammy More</h1>
-      <div class="major section">
-        <div class="container">
-          <div class="adventure-section">
-            <div id="js-output">
-              
-              <ul class="exits"></ul>
+        <h2 style="font-family: Doto, sans-serif; text-align: center; font-size: 80px; color:white;">Sammy More</h2>
+        <div class="major section">
+            <div class="container">
+                <!-- Main output area for the game -->
+                <div id="js-output"></div>
 
-              <li onclick="newRoom(food)"> "Towards the smell of food." </li>
-  
-              <li onclick="newRoom(forest)"> "Deeper into the forest to explore." </li>
+                      <!-- Score display section -->
+             <div id="score-display">
+              Score: 0
+             </div>
+             
             </div>
-          </div>    
-        </div>
-      </div>
-    <nav id="links">
-			<!-- Put links to other pages (including the homepage) here. -->
-			 <button id="home" class="home-button">
-             	<a href="./index.html">Back to Homepage</a>
-			</button>
-		</nav>
-  </main>
+
+        <!-- Navigation links -->
+        <nav id="links">
+            <button id="home" class="home-button">
+                <a href="./index.html">Back to Homepage</a>
+            </button>
+        </nav>
+    </section>
+</main>
 </body>
 </html>

@@ -3,120 +3,169 @@
  * Date: 12-9-2024
  * Description: This script is an implementation of experimenting with data objects that help hide and show 
  * descriptions of locations, available exits, and more. This approach makes it clean and accessible to different pages and buttons without needing several different HTML pages.
- * Credits to Chat GPT and WesBot for helping and guiding me through the javascript code for this project.
+ * Credits to Chat GPT and WesBot for helping and guiding me through the javascript code for this project. Also, thanks to professor Wes' jQuery DOM Manipulation & Events - "Choose You Own Adventure" for the javascript source.
  * 
 */
 
 // Room definitions
 const rooms = {
     cul: {
-        name: "Forest or Food?",
-        description: "You wake up in the middle of a forest, with no recollection of how you got there. Where do you choose to go?",
+        name: "Where Are You Headed?",
+        description: "You wake up in the middle of a forest, with no recollection of how you got there. Which way would you prefer to go?",
+        image: "./img/default.png",
         exitOptions: [
-            { key: "food", text: "Towards the smell of food" },
-            { key: "forest", text: "Deeper into the forest to explore." }
-        ]
-    },
-    food: {
-        name: "Towards the Smell of Food",
-        description: "As you head towards the smell of food, you come across a small cabin in the woods, where you hear humming coming from inside. What do you do?",
-        exitOptions: [
-            { key: "window", text: "Slip in through the open side window" },
-            { key: "knock", text: "Knock on the door" }
-        ]
-    },
-    window: {
-        name: "Through the Window",
-        description: "You slip in through the side window and fall to the ground with a crash. The humming stops. You look up and see:",
-        exitOptions: [
-            { key: "mother", text: "Your mother, smiling down at you, holding a bowl of your favorite food." },
-            { key: "bear", text: "A bear with golden braids, staring down in confusion." }
-        ]
-    },
-    mother: {
-        name: "Dining with Mother",
-        description: "Your mother invites you to eat in the dining room as she hums a song from your childhood. What do you do?",
-        exitOptions: [
-            { key: "eat", text: "Eat the food she graciously offered." },
-            { key: "run", text: "Run. Before it's too late." }
-        ]
-    },
-    eat: {
-        name: "Consuming the Food",
-        description: "As your stomach grumbles, you quickly scarf down the food. Yet, the more you eat, the more the world around you begins to melt away.",
-        exitOptions: [
-            { key: "HMMMM", text: "HMMMM" }
-        ]
-    },
-    HMMMM: {
-        name: "Waking Up",
-        description: "You suddenly wake up, back in your house. You should not dorm... You will miss home too much, and you are too trusting for your own good."
-    },
-    run: {
-        name: "Running Away",
-        description: "You run. As quickly as your legs can take you. You make it outside and hear a scream. It's coming from the cabin. What do you do?",
-        exitOptions: [
-            { key: "turn", text: "Turn around and find our who was screaming and why."},
-            { key: "leave", text: "Go back to exploring where the smell of the food is coming from."},
-        ]
-    },
-    turn: {
-        name: "Who Is Screaming",
-        description: "Against your better judgement, your turn around to check on the person who was screaming. You go in the house to investigate. Once you open the door, a shadow appears. What are you gonna do?",
-        exitOptions: [
-            { key: "continue", text: "Comtinue approching the shadow."},
-            { key: "leave", text: "Leave, this was a horrible idea..."},
-        ]
-    },
-    continue: {
-        name: "OOOHHH",
-        description: "'Thank you', the shadow says. It reaches out to you and embraces you. It's embrace is calming and before you know it, you are back in your dorm room."
-    },
-    leave: {
-       name: "Back to the Beginning",
-        description: "You decide to leave and find yourself back where you started.",
-        exitOptions: [
-            { key: "cul", text: "Start Over" } 
-        ]
-    },
+            { key: "quest2", text: "Towards the smell of food", value: 1 },
+            { key: "quest2", text: "Deeper into the forest to explore.", value: 10 },
+            { key: "quest2", text: "In search of a warm place to sleep." , value: 15},
+            { key: "quest2", text: "Towards the sound of music.", value: 5},
+            { key: "quest2", text: "North, that way always leads to civilization", value: 20}
 
-    knock: {
-        name: "Knocking on the door",
-        description: "You knock on the door again and again, but no one answers. What do you do?",
-        exitOptions: [
-            { key: "keep", text: "Keep knocking" },
-            { key: "window", text: "Give up and go through the side window." }
         ]
     },
-    keep: {
-        name: "Continue Knocking",
-        description: "After 10 minutes of knocking, a deep voice exclaims angrily, 'Enough!'. Seconds pass before a large grumpy bear opens the door. What do you do?",
+    quest2: {
+        name: "Deeper into the Forest",
+        description: "As you continue to wander the forest, you come across a lake, so deep you can’t see the bottom. Koi fish swim around and for a moment you swear you can see a light flicker below. What do you do?",
+        image: "./img/pond.png",
         exitOptions: [
-            { key: "intro", text: "You introduce yourself."},
-            { key: "sorry", text: "You apologize profusely"},
+            { key: "quest3", text: "Jump in the water and go for a swim", value: 5 },
+            { key: "quest3", text: "Try to catch a koi fish.", value: 10 },
+            { key: "quest3", text: "Take a sip of the water." , value: 15},
+            { key: "quest3", text: "Ignore the water, still water is never safe.", value: 20},
+            { key: "quest3", text: "Just dip your feet in for a moment.", value: 1}
+        ],
+    },
+    quest3: {
+        name: "Something or Someone Is Near...",
+        description: "Eventually a voice begins to talk. You look around for a moment and realize a koi fish is talking to you! It begins to say:",
+        image: "./img/koi-pond.png",
+        exitOptions: [
+            { key: "quest4", text: "What are you doing here? Don’t you have a test tomorrow?", value: 20 },
+            { key: "quest4", text: "Not all who wander are lost… but you’re lost as hell.", value: 5 },
+            { key: "quest4", text: "You’re going the wrong way, turn around. " , value: 10},
+            { key: "quest4", text: "Free me! FREE ME!", value: 15},
+            { key: "quest4", text: "Can you get me a glass of water?", value: 1}
         ]
     },
-    intro: {
-        name: "Introducing Yourself",
-        description: "The bear pauses, shocked to see a human at his door. He invites you inside. Do you follow?",
+    quest4: {
+        name: "Ignoring the Fish",
+        description: "Ignoring the voice of the fish, you continue your journey. Soon enough you come across a cabin in the woods. What do you do?",
+        image: "./img/cabin.png",
         exitOptions: [
-            { key: "no", text: "NO"},
-            { key: "yes", text: "YES"},
+            { key: "quest5", text: "Wait outside the cabin", value: 20 },
+            { key: "quest5", text: "Sneak in through the open window on the side.", value: 5 },
+            { key: "quest5", text: "Break the front door down." , value: 10},
+            { key: "quest5", text: "Knock on the door", value: 15},
+            { key: "quest5", text: "Yell for help", value: 1}
         ]
     },
-    sorry:{
-        name: "Apologizing Profusely",
-        description: "The bear laughs. He didn't mean to scare you. He asks why you are at his door, distrubing his sleep.",
+    quest5: {
+        name: "BEAR!!!",
+        description: "Before you know it, you find yourself in the cabin following a large brown bear with golden locks. He offers you some food and asks why you have come to his house. What do you tell him?",
+        image: "./img/bear-food.png",
         exitOptions: [
-            { key: "explain", text: "Explain your situation to him."},
-            { key: "beg", text: "Beg for food and place to stay."},
+            { key: "quest6", text: "Ask for the nearest town with humans", value: 20 },
+            { key: "quest6", text: "Lie to him, you don’t know if you can trust him", value: 5 },
+            { key: "quest6", text: "Ask for a place to stay the night" , value: 10},
+            { key: "quest6", text: "Explain your situation to him", value: 15},
+            { key: "quest6", text: "Apologize for intruding and offer to help around the house for his generosity", value: 1}
+        ]
+    },
+    quest6: {
+        name: "Place to Stay for the Night",
+        description: "The bear listens closely to the words you say. He offers you a place to stay for the night, but in the morning you must be on your way. He tells you that there is a library in the heart of the forest. There, you can find:",
+        image: "./img/bear-home.png",
+        exitOptions: [
+            { key: "quest7", text: "A book with the answers to any problem in the world, but not the steps to achieve those goals", value: 20 },
+            { key: "quest7", text: "A book with the best jokes, but you will never be able to share them with anyone", value: 5 },
+            { key: "quest7", text: "A book which tells you of your future, but once you read it, you can never change your fate" , value: 10},
+            { key: "quest7", text: "A book that fixes the world’s problems, but you will never get to experience that world", value: 15},
+            { key: "quest7", text: "A book that tells you everyone’s soulmate, but not your own", value: 1}
+        ]
+    },
+    quest7: {
+        name: "Next Morning",
+        description: "The next morning you go out in search of the library, with the bear trailing behind to make sure you make it there safely. To pass time throughout the long journey, you:",
+        image: "./img/library.png",
+        exitOptions: [
+            { key: "quest8", text: "Ask more questions about the library and book you seek", value: 20 },
+            { key: "quest8", text: "Hum songs, soon the bear starts to hum along too", value: 5 },
+            { key: "quest8", text: "Begin recounting your own funny stories", value: 10},
+            { key: "quest8", text: "Ask the bear about his story", value: 15},
+            { key: "quest8", text: "Ask if all the creatures in the forest can talk", value: 1}
+        ]
+    },
+    quest8: {
+        name: "Stone...",
+        description: "Before the bear gets the chance to answer, you trip on a stone and:",
+        image: "./img/stone.png",
+        exitOptions: [
+            { key: "quest9", text: "Break my arm, it’s painful but not a necessity in order to get home", value: 20 },
+            { key: "quest9", text: "Fall face flat, I hear the bear laugh behind me", value: 5 },
+            { key: "quest9", text: "Catch myself! You’ll never catch me slipping", value: 10},
+            { key: "quest9", text: "Hit my head, the worst case scenario is a concussion", value: 15},
+            { key: "quest9", text: "The bear catches me, saving me once again", value: 1}
+        ]
+    },
+    quest9: {
+        name: "Continue Your Adventure, Brave One",
+        description: "As you carefully walk through the rest of the forest, you finally come face to face with a looming library. Beautiful, yet ominous. Before you enter, you must answer the following question: “Why do you deserve to enter?",
+        image: "./img/book.png",
+        exitOptions: [
+            { key: "quest10", text: "Break my arm, it’s painful but not a necessity in order to get home", value: 20 },
+            { key: "quest10", text: "Fall face flat, I hear the bear laugh behind me", value: 5 },
+            { key: "quest10", text: "Catch myself! You’ll never catch me slipping", value: 10},
+            { key: "quest10", text: "Hit my head, the worst case scenario is a concussion", value: 15},
+            { key: "quest10", text: "The bear catches me, saving me once again", value: 1}
         ]
     },
 };
 
+// Function to display the room description in a container with a border
+function displayRoomDescription() {
+    const output = document.getElementById(outputHTMLid); // Assuming you have an output element
+    if (output) {
+        // Clear previous content
+        clearDisplayArea(); // Clear the display area (function to clear previous content)
+        
+        // Create a div to hold the room description
+        const descriptionContainer = document.createElement('div');
+        descriptionContainer.classList.add('room-description');
+        
+        // Set the room description text
+        descriptionContainer.innerHTML = `<h2>${cul.name}</h2><p>${cul.description}</p>`;
+        
+        // Append the description container to the output area
+        output.appendChild(descriptionContainer);
+        
+        // Optionally, display the room's image as well
+        output.innerHTML += `<img src="${cul.image}" alt="Image for ${cul.name}" style="max-width: 100%; height: auto; border-radius: 8px;">`;
+        
+        // Display the exit options (if needed)
+        cul.exitOptions.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option.text;
+            button.onclick = function() {
+                selectRoom(option.key, option.text, option.value); // Assuming you have a function to handle room selection
+            };
+            output.appendChild(button);
+        });
+    }
+}
+
 // Global variables
 let currentRoom = "cul"; // Start room key
 const outputHTMLid = "js-output";
+const userSelections = []; // Array to keep track of user selections
+let totalScore = 0; // Variable to track total score
+
+// Track the count of selections for specific values
+const selectionCounts = {
+    1: 4,
+    5: 4,
+    10: 4,
+    15: 4,
+    20: 4,
+};
 
 // Function to clear the display area
 function clearDisplayArea() {
@@ -124,50 +173,173 @@ function clearDisplayArea() {
     if (output) {
         output.innerHTML = "";
     }
-};
+}
 
-// Function to display the current room
+// Function to display the current room along with its image
 function displayCurrentRoom(room) {
     const output = document.getElementById(outputHTMLid);
     if (output) {
+        clearDisplayArea(); // Clear previous content
+        
+        // Display the room's name and description
         output.innerHTML += `<h1>${room.name}</h1>`;
-        output.innerHTML += `<p>${room.description}</p>`;
+        output.innerHTML += `<p class="room-description">${room.description}</p>`;
+        
+         // Create the image element
+         const img = document.createElement('img');
+         img.src = room.image; // Set the image source
+         img.alt = `Image of ${room.name}`; // Set alt text
+         img.style.display = 'block'; // Make the image a block element
+         img.style.margin = '0 auto'; // Center the image horizontally
+         img.style.maxWidth = '75%'; // Ensure the image is responsive
+ 
+         // Append the image to the output container
+         output.appendChild(img);
     }
-};
+}
+
+// Function to apply styling to buttons
+function styleButton(button) {
+    button.style.marginBottom = '15px';  // Add space between buttons
+    button.style.padding = '15px';        // Adjust padding for button size
+    button.style.backgroundColor = 'teal'; // Button background color
+    button.style.color = 'white';           // Button text color
+    button.style.border = 'none';          // Remove button border
+    button.style.cursor = 'pointer';      // Cursor change on hover
+}
 
 // Function to display the available exits
 function displayCurrentExits(room) {
-    const output = document.getElementById(outputHTMLid);
+    const output = document.getElementById(outputHTMLid); // Ensure this is the correct ID
     if (output && room.exitOptions) {
+        // Create a container to hold the buttons and apply grid styling
+        const buttonContainer = document.createElement('div');
+        buttonContainer.style.display = 'grid';                  // Apply grid layout
+        buttonContainer.style.gridTemplateColumns = '1fr 1fr';   // 2 equal columns
+        buttonContainer.style.gap = '15px';                       // Space between buttons
+        buttonContainer.style.width = '100%';                     // Make sure it fills the container
+        buttonContainer.style.marginTop = '20px';                 // Optional: Adjust margin on top
+
         room.exitOptions.forEach(option => {
-            output.innerHTML += `<button onclick="newRoom('${option.key}')">${option.text}</button>`;
+            // Create a button for each exit option
+            const button = document.createElement('button');
+            button.textContent = option.text;
+            button.onclick = function() {
+                selectRoom(option.key, option.text, option.value);
+            };
+
+            // Apply button styling
+            styleButton(button);
+
+            // Append the button to the button container
+            buttonContainer.appendChild(button);
         });
-    }
-};
 
-// Function to move to a new room
+        // Append the button container to the output container
+        output.appendChild(buttonContainer);
+    } else {
+        console.error('Error: No exit options or output element found.');
+    }
+}
+
+
+// Function to handle room selection, update score, and keep track of choices
+function selectRoom(nextRoom, selectedText, value) {
+    console.log(`Selected: ${selectedText}, Value: ${value}`); // Debugging
+    totalScore += value; // Add the selected option's value to the total score
+    console.log(`Updated Total Score: ${totalScore}`); // Debugging
+    userSelections.push({ room: nextRoom, choice: selectedText, points: value });
+    
+    // Update the selection count for the chosen value
+    if (selectionCounts.hasOwnProperty(value)) {
+        selectionCounts[value]++;
+    }
+    
+    updateScoreDisplay(); // Update the displayed score
+    newRoom(nextRoom);
+}
+
+// Function to load a new room
 function newRoom(nextRoom) {
-    if (!rooms[nextRoom]) {
-        console.error(`Room "${nextRoom}" does not exist.`);
-        return;
+    const currentRoomObj = rooms[nextRoom];
+    if (currentRoomObj) {
+        currentRoom = nextRoom;
+        clearDisplayArea();
+        displayCurrentRoom(currentRoomObj);
+        displayCurrentExits(currentRoomObj);
+    } else {
+        displayFinalScore();
     }
-    currentRoom = nextRoom;
-    const currentRoomObj = rooms[currentRoom];
-    clearDisplayArea();
-    displayCurrentRoom(currentRoomObj);
-    displayCurrentExits(currentRoomObj);
-};
+}
 
-// Adding a class to the descriptions in ordert to style it
-function displayCurrentRoom(room) {
+// Function to display the final score, description, and image based on selection counts
+function displayFinalScore() {
     const output = document.getElementById(outputHTMLid);
     if (output) {
-        output.innerHTML += `<h1>${room.name}</h1>`;
-        output.innerHTML += `<p class="room-description">${room.description}</p>`;
-    }
-};
+        clearDisplayArea(); // Clear the display area
+        output.innerHTML = `<h1>Thank You For Playing!</h1>`;
+        output.innerHTML += `<p>Your total score is: ${totalScore}</p>`;
 
-// Initialize the game
+        // Determine the most frequently selected value
+        let mostSelectedValue = null;
+        let maxCount = 0;
+
+        for (const [value, count] of Object.entries(selectionCounts)) {
+            if (count > maxCount) {
+                maxCount = count;
+                mostSelectedValue = value;
+            }
+        }
+
+        // Map values to descriptions and images
+        const descriptions = {
+            1: "You are affiliated with Oaks/RCC College! Guided by love and care for others and the Earth, hold the campus on their backs. They provide support through laughter and love, offering love and support to those seeking company. Affiliates are prepared to build and care for their communities.",
+            5: "You are affiliated with Porter/Kresge College! Despite living in UCSC's westside, create stories, art, and ideas that could shape the world. Their strengths come from imagination and ambition, often presenting bizarre ideas with great results. They believe their dreams can be realized in reality.",
+            10: "You are affiliated with Cowell/Stevenson College! Social, natural leaders, and active members of UCSC's sports, fraternities, and organizations. Despite criticism for their bossy and controlling nature, they excel in planning and facilitating well.",
+            15: "You are affiliated with 9/JRL College! Are dedicated to peace, justice, and promoting harmony here at UCSC. They advocate for their beliefs in their communities and globally, often avoiding confrontation. Their love and empathy guide them through university, ensuring a balanced and balanced environment.",
+            20: "You are affiliated with Crown/Merrill College! Appreciate quiet life and are often the brainiest. They are problem solvers and adaptable, but struggle with heart problems. Embracing this college requires independence and practicing independence.",
+        };
+
+        const images = {
+            1: "./img/oakes.png",
+            5: "./img/porter.png",
+            10: "./img/stevenson.png",
+            15: "./img/nine.png",
+            20: "./img/crown.png",
+        };
+
+       // Display the corresponding description and image
+       if (mostSelectedValue !== null) {
+        // Create a container for the description with a border
+        const descriptionContainer = document.createElement('div');
+        descriptionContainer.classList.add('description-container');
+        descriptionContainer.textContent = descriptions[mostSelectedValue];
+        output.appendChild(descriptionContainer);
+
+        // Add the image with class for styling
+        output.innerHTML += `<img src="${images[mostSelectedValue]}" alt="Image for ${descriptions[mostSelectedValue]}" class="final-image">`;
+    } else {
+        output.innerHTML += `<p>No specific affiliation could be determined based on your choices.</p>`;
+    }
+    }
+}
+
+
+// Function to update the score display
+function updateScoreDisplay() {
+    const scoreElement = document.getElementById("score-display");
+    if (scoreElement) {
+        scoreElement.textContent = `Score: ${totalScore}`;
+    } else {
+        console.error("Score display element not found.");
+    }
+}
+
+// Initialize the application
 window.onload = function () {
+    const output = document.getElementById(outputHTMLid);
+    if (output) {
+        output.innerHTML = `<div id="score-display">Score: 0</div>`; // Initial score display
+    }
     newRoom(currentRoom);
 };
