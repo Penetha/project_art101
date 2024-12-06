@@ -1,5 +1,4 @@
-/*
- * Author: Kimberly Estrada <kestrad9@ucsc.edu>
+/* Author: Kimberly Estrada <kestrad9@ucsc.edu>
  * Date: 12-9-2024
  * Description: This script is an implementation of experimenting with data objects that help hide and show 
  * descriptions of locations, available exits, and more. This approach makes it clean and accessible to different pages and buttons without needing several different HTML pages.

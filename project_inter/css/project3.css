@@ -78,4 +78,17 @@ h1{
     color: #333;
     line-height: 1.6;
 }
+.js-button{
+    position: fixed;
+    width: 100px;
+    color: black;
+    background-color: lightgrey;
+    font-size: 12px;
+    font-style: normal;
+    padding: 5px 10px;
+    border-radius: 5px;
+    left: 90%;
+    bottom: 10px;
+    height: 40px;
+}
 
