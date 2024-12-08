@@ -5,10 +5,10 @@ body{
 
 h1{
     justify-content: center;
-    font-size: 40px;
+    font-size: 35px;
     color: white;
     text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 .home-button{
@@ -49,18 +49,6 @@ h1{
     height: 40px;
 }
 
-.description-container {
-    padding: 20px;
-    background-color: #f0f0f0; /* Light background for the description */
-    border: 2px solid #007BFF; /* Blue border around the description */
-    border-radius: 8px; /* Rounded corners for the container */
-    margin-bottom: 20px; /* Space after each description */
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-}
-
 .final-image {
     max-width: 100%;
     height: auto;
@@ -69,14 +57,15 @@ h1{
 
 .room-description {
     padding: 15px;
-    background-color: #f0f0f0; /* Light background */
-    border: 2px solid #007BFF; /* Blue border */
-    border-radius: 8px; /* Rounded corners */
-    margin-bottom: 10px; /* Space below the description */
+    background-color: lightgray; 
+    border: 5px solid black; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
-    color: #333;
+    color: black;
     line-height: 1.6;
+    font-style: italic;
 }
 .js-button{
     position: fixed;

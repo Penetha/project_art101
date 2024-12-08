@@ -46,7 +46,7 @@ const rooms = {
         ]
     },
     quest4: {
-        name: "Ignoring the Fish",
+        name: "Cabin in the Middle of the Woods",
         description: "Ignoring the voice of the fish, you continue your journey. Soon enough you come across a cabin in the woods. What do you do?",
         image: "./img/cabin.png",
         exitOptions: [
@@ -84,7 +84,7 @@ const rooms = {
     quest7: {
         name: "Next Morning",
         description: "The next morning you go out in search of the library, with the bear trailing behind to make sure you make it there safely. To pass time throughout the long journey, you:",
-        image: "./img/library.png",
+        image: "./img/bear.png",
         exitOptions: [
             { key: "quest8", text: "Ask more questions about the library and book you seek", value: 20 },
             { key: "quest8", text: "Hum songs, soon the bear starts to hum along too", value: 5 },
@@ -106,15 +106,27 @@ const rooms = {
         ]
     },
     quest9: {
-        name: "Continue Your Adventure, Brave One",
+        name: "Continue With Your Adventure, Brave One",
         description: "As you carefully walk through the rest of the forest, you finally come face to face with a looming library. Beautiful, yet ominous. Before you enter, you must answer the following question: “Why do you deserve to enter?",
+        image: "./img/library.png",
+        exitOptions: [
+            { key: "quest10", text: "I seek knowledge, and I’ve been told you hold all the knowledge I need. Let me enter, and I will change the world.", value: 20 },
+            { key: "quest10", text: "I just want to go home", value: 5 },
+            { key: "quest10", text: "Because I have survived this far.", value: 10},
+            { key: "quest10", text: "I want to know if the legends of the library are true.", value: 15},
+            { key: "quest10", text: "I don’t, but the bear does.", value: 1}
+        ]
+    },
+    quest10: {
+        name: "Inside the Mysterious Library",
+        description: "As you make your way to the library, the doors begin to open, you and the bear slowly walk in. You immediately see the book you seek, sitting at a podium at the center of the room. As you approach, the world around you begins to fade away. Suddenly you hear a voice say in a calm and soft voice, say: ",
         image: "./img/book.png",
         exitOptions: [
-            { key: "quest10", text: "Break my arm, it’s painful but not a necessity in order to get home", value: 20 },
-            { key: "quest10", text: "Fall face flat, I hear the bear laugh behind me", value: 5 },
-            { key: "quest10", text: "Catch myself! You’ll never catch me slipping", value: 10},
-            { key: "quest10", text: "Hit my head, the worst case scenario is a concussion", value: 15},
-            { key: "quest10", text: "The bear catches me, saving me once again", value: 1}
+            { key: "end", text: "Knowlege without action is a riddle without a solution.", value: 15 },
+            { key: "end", text: "Laughter trapped in solitude echoes the loudest in the soul.", value: 5 },
+            { key: "end", text: "To glimpse the future is to surrender the freedom of tomorrow." , value: 10 },
+            { key: "end", text: "A better world needs those willing to plant seeds for trees they'll never sit under.", value: 1 },
+            { key: "end", text: "To see the threads of others' hearts but not your own is the lonelist wisdom.", value: 20 },
         ]
     },
 };
@@ -191,6 +203,10 @@ function displayCurrentRoom(room) {
          img.style.display = 'block'; // Make the image a block element
          img.style.margin = '0 auto'; // Center the image horizontally
          img.style.maxWidth = '75%'; // Ensure the image is responsive
+
+         // Adding a border to the images
+         img.style.border = '10px solid lightgrey';
+         img.style.borderRadius = '20px';
  
          // Append the image to the output container
          output.appendChild(img);
@@ -203,8 +219,8 @@ function styleButton(button) {
     button.style.padding = '15px';        // Adjust padding for button size
     button.style.backgroundColor = 'teal'; // Button background color
     button.style.color = 'white';           // Button text color
-    button.style.border = 'none';          // Remove button border
-    button.style.cursor = 'pointer';      // Cursor change on hover
+    button.style.border = '5px solid black';  // Adding a button border
+    button.style.cursor = 'pointer';   
 }
 
 // Function to display the available exits
@@ -240,7 +256,6 @@ function displayCurrentExits(room) {
         console.error('Error: No exit options or output element found.');
     }
 }
-
 
 // Function to handle room selection, update score, and keep track of choices
 function selectRoom(nextRoom, selectedText, value) {
@@ -292,11 +307,11 @@ function displayFinalScore() {
 
         // Map values to descriptions and images
         const descriptions = {
-            1: "You are affiliated with Oaks/RCC College! Guided by love and care for others and the Earth, hold the campus on their backs. They provide support through laughter and love, offering love and support to those seeking company. Affiliates are prepared to build and care for their communities.",
-            5: "You are affiliated with Porter/Kresge College! Despite living in UCSC's westside, create stories, art, and ideas that could shape the world. Their strengths come from imagination and ambition, often presenting bizarre ideas with great results. They believe their dreams can be realized in reality.",
-            10: "You are affiliated with Cowell/Stevenson College! Social, natural leaders, and active members of UCSC's sports, fraternities, and organizations. Despite criticism for their bossy and controlling nature, they excel in planning and facilitating well.",
-            15: "You are affiliated with 9/JRL College! Are dedicated to peace, justice, and promoting harmony here at UCSC. They advocate for their beliefs in their communities and globally, often avoiding confrontation. Their love and empathy guide them through university, ensuring a balanced and balanced environment.",
-            20: "You are affiliated with Crown/Merrill College! Appreciate quiet life and are often the brainiest. They are problem solvers and adaptable, but struggle with heart problems. Embracing this college requires independence and practicing independence.",
+            1: "You suddenly wake up in Oakes/RCC Collge. This college is represented by people who are guided by love and care for others and the Earth, hold the campus on their backs. They provide support through laughter and love, offering love and support to those seeking company. Affiliates are prepared to build and care for their communities.",
+            5: "You suddenly wake up in Porter/Kresge College. This college is represented by people who create stories, art, and ideas that could shape the world. Their strengths come from imagination and ambition, often presenting bizarre ideas with great results. They believe their dreams can be realized in reality.",
+            10: "You suddenly wake up in Cowell/Stevenson College. This college is represented by people who are social, natural leaders, and active members of UCSC's sports, fraternities, and organizations. Despite criticism for their bossy and controlling nature, they excel in planning and facilitating well.",
+            15: "You suddenly wake up in 9/JRL College. This college is represented by people who are dedicated to peace, justice, and promoting harmony here at UCSC. They advocate for their beliefs in their communities and globally, often avoiding confrontation. Their love and empathy guide them through university, ensuring a balanced and balanced environment.",
+            20: "You suddenly wake up in Crown/Merrill College. This college is represented by people who appreciate quiet life and are often the brainiest. They are problem solvers and adaptable, but struggle with heart problems. Embracing this college requires independence and practicing independence.",
         };
 
         const images = {
@@ -320,9 +335,20 @@ function displayFinalScore() {
     } else {
         output.innerHTML += `<p>No specific affiliation could be determined based on your choices.</p>`;
     }
-    }
+    
+       // Add credits at the bottom
+       const creditsContainer = document.createElement('div');
+       creditsContainer.classList.add('credits-container');
+       creditsContainer.innerHTML = `
+           <p>CREDITS:</p>
+           <p>Art Design by John Conrad <p>
+           <p>Story by Dani Dayao <p>
+           <p>Project Leader - Madison De La Merce <p> 
+           <p>Technical Team - Kimberly Estrada, Deigo Garcia, Pennetha Jayakumar <p>
+       `;
+       output.appendChild(creditsContainer);
+   }
 }
-
 
 // Function to update the score display
 function updateScoreDisplay() {
