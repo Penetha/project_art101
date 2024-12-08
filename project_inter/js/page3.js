@@ -46,7 +46,7 @@ const rooms = {
         ]
     },
     quest4: {
-        name: "Cabin in the Middle of the Woods",
+        name: "Lonely Cabin",
         description: "Ignoring the voice of the fish, you continue your journey. Soon enough you come across a cabin in the woods. What do you do?",
         image: "./img/cabin.png",
         exitOptions: [
@@ -70,7 +70,7 @@ const rooms = {
         ]
     },
     quest6: {
-        name: "Place to Stay for the Night",
+        name: "Sleep Over",
         description: "The bear listens closely to the words you say. He offers you a place to stay for the night, but in the morning you must be on your way. He tells you that there is a library in the heart of the forest. There, you can find:",
         image: "./img/bear-home.png",
         exitOptions: [
@@ -106,7 +106,7 @@ const rooms = {
         ]
     },
     quest9: {
-        name: "Continue With Your Adventure, Brave One",
+        name: "Proceeding Forward",
         description: "As you carefully walk through the rest of the forest, you finally come face to face with a looming library. Beautiful, yet ominous. Before you enter, you must answer the following question: “Why do you deserve to enter?",
         image: "./img/library.png",
         exitOptions: [
@@ -291,7 +291,7 @@ function displayFinalScore() {
     const output = document.getElementById(outputHTMLid);
     if (output) {
         clearDisplayArea(); // Clear the display area
-        output.innerHTML = `<h1>Thank You For Playing!</h1>`;
+        output.innerHTML = `<h1>Waking Up</h1>`;
         output.innerHTML += `<p>Your total score is: ${totalScore}</p>`;
 
         // Determine the most frequently selected value
@@ -340,10 +340,10 @@ function displayFinalScore() {
        const creditsContainer = document.createElement('div');
        creditsContainer.classList.add('credits-container');
        creditsContainer.innerHTML = `
+            <p>Thank You For Playing!<p>
            <p>CREDITS:</p>
-           <p>Art Design by John Conrad <p>
-           <p>Story by Dani Dayao <p>
-           <p>Project Leader - Madison De La Merce <p> 
+            <p>Project Leader - Madison De La Merce <p>
+           <p>Art Design by John Conrad & Story by Dani Dayao <p> 
            <p>Technical Team - Kimberly Estrada, Deigo Garcia, Pennetha Jayakumar <p>
        `;
        output.appendChild(creditsContainer);

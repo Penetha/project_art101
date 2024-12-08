@@ -65,7 +65,7 @@ h1{
     font-size: 16px;
     color: black;
     line-height: 1.6;
-    font-style: italic;
+    font-style: normal;
 }
 .js-button{
     position: fixed;
@@ -79,5 +79,18 @@ h1{
     left: 90%;
     bottom: 10px;
     height: 40px;
+}
+
+.description-container{
+    padding: 15px;
+    background-color: lightgray; 
+    border: 5px solid black; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: black;
+    line-height: 1.6;
+    font-style: normal;
 }
 
