@@ -119,7 +119,7 @@ const rooms = {
     },
     quest10: {
         name: "Inside the Mysterious Library",
-        description: "As you make your way to the library, the doors begin to open, you and the bear slowly walk in. You immediately see the book you seek, sitting at a podium at the center of the room. As you approach, the world around you begins to fade away. Suddenly you hear a voice say in a calm and soft voice, say: ",
+        description: "As you make your way to the library, the doors begin to open, you and the bear slowly walk in. You immediately see the book you seek, sitting at a podium at the center of the room. As you approach, the world around you begins to fade away. Suddenly you hear a calm and soft voice in the distance. What does it tell you? ",
         image: "./img/book.png",
         exitOptions: [
             { key: "end", text: "Knowlege without action is a riddle without a solution.", value: 15 },
