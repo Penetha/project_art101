@@ -122,11 +122,11 @@ const rooms = {
         description: "As you make your way to the library, the doors begin to open, you and the bear slowly walk in. You immediately see the book you seek, sitting at a podium at the center of the room. As you approach, the world around you begins to fade away. Suddenly you hear a calm and soft voice in the distance. What does it tell you? ",
         image: "./img/book.png",
         exitOptions: [
-            { key: "end", text: "Knowlege without action is a riddle without a solution.", value: 15 },
+            { key: "end", text: "Knowledge without action is a riddle without a solution.", value: 15 },
             { key: "end", text: "Laughter trapped in solitude echoes the loudest in the soul.", value: 5 },
             { key: "end", text: "To glimpse the future is to surrender the freedom of tomorrow." , value: 10 },
             { key: "end", text: "A better world needs those willing to plant seeds for trees they'll never sit under.", value: 1 },
-            { key: "end", text: "To see the threads of others' hearts but not your own is the lonelist wisdom.", value: 20 },
+            { key: "end", text: "To see the threads of others' hearts but not your own is the loneliest wisdom.", value: 20 },
         ]
     },
 };
@@ -307,7 +307,7 @@ function displayFinalScore() {
 
         // Map values to descriptions and images
         const descriptions = {
-            1: "You suddenly wake up in Oakes/RCC Collge. This college is represented by people who are guided by love and care for others and the Earth, hold the campus on their backs. They provide support through laughter and love, offering love and support to those seeking company. Affiliates are prepared to build and care for their communities.",
+            1: "You suddenly wake up in Oakes/RCC College. This college is represented by people who are guided by love and care for others and the Earth, holding the campus on their backs. They provide support through laughter and love, offering love and support to those seeking company. Affiliates are prepared to build and care for their communities.",
             5: "You suddenly wake up in Porter/Kresge College. This college is represented by people who create stories, art, and ideas that could shape the world. Their strengths come from imagination and ambition, often presenting bizarre ideas with great results. They believe their dreams can be realized in reality.",
             10: "You suddenly wake up in Cowell/Stevenson College. This college is represented by people who are social, natural leaders, and active members of UCSC's sports, fraternities, and organizations. Despite criticism for their bossy and controlling nature, they excel in planning and facilitating well.",
             15: "You suddenly wake up in 9/JRL College. This college is represented by people who are dedicated to peace, justice, and promoting harmony here at UCSC. They advocate for their beliefs in their communities and globally, often avoiding confrontation. Their love and empathy guide them through university, ensuring a balanced and balanced environment.",
