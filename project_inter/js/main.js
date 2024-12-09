@@ -1,10 +1,37 @@
-/* Author: Kimberly Estrada <kestrad9@ucsc.edu>
- * Date: 12-9-2024
- * Description: This script is an implementation of experimenting with data objects that help hide and show 
- * descriptions of locations, available exits, and more. This approach makes it clean and accessible to different pages and buttons without needing several different HTML pages.
- * Credits to Chat GPT and WesBot for helping and guiding me through the javascript code for this project. Also, thanks to professor Wes' jQuery DOM Manipulation & Events - "Choose You Own Adventure" for the javascript source.
- * 
-*/
+/*
+ * Author: Kimberly Estrada <kestrad9@ucsc.edu>
+ * Date: 12-9-2024 
+ * Description: This script integrates all functionalities for character selection, room navigation, and game progression.
+ * Credits to WesBot, Chat GPT, and other sources for help and guidance.
+ */
+
+// Hide the rooms initially
+document.addEventListener("DOMContentLoaded", function () {
+    const roomContainer = document.getElementById(outputHTMLid); // Assuming this is the room container ID
+    if (roomContainer) {
+        roomContainer.style.display = "none"; // Hide the container initially
+    }
+});
+
+// Character selection logic
+document.querySelectorAll(".character-img img").forEach(function (img) {
+    img.addEventListener("click", function () {
+        // Highlight the selected character
+        img.classList.add("selected");
+
+        // Show the selection message and continue button
+        document.getElementById("selection-message").style.display = "block";
+
+        // Show the room container
+        const roomContainer = document.getElementById(outputHTMLid);
+        if (roomContainer) {
+            roomContainer.style.display = "block"; // Make the room container visible
+        }
+
+        // Optionally scroll to the room container
+        roomContainer.scrollIntoView({ behavior: "smooth" });
+    });
+});
 
 // Room definitions
 const rooms = {
@@ -131,6 +158,16 @@ const rooms = {
     },
 };
 
+// Create a new howler sound object for the background music
+var backgroundMusic = new Howl({
+    src: ['./sound/woods.mp3'],
+    loop: true,
+});
+document.addEventListener('click', function() {
+    // Play the background music when the user interacts with the page.
+    backgroundMusic.play();
+  })
+
 // Function to display the room description in a container with a border
 function displayRoomDescription() {
     const output = document.getElementById(outputHTMLid); // Assuming you have an output element
@@ -196,44 +233,32 @@ function displayCurrentRoom(room) {
         output.innerHTML += `<h1>${room.name}</h1>`;
         output.innerHTML += `<p class="room-description">${room.description}</p>`;
         
-         // Create the image element
-         const img = document.createElement('img');
-         img.src = room.image; // Set the image source
-         img.alt = `Image of ${room.name}`; // Set alt text
-         img.style.display = 'block'; // Make the image a block element
-         img.style.margin = '0 auto'; // Center the image horizontally
-         img.style.maxWidth = '75%'; // Ensure the image is responsive
-
-         // Adding a border to the images
-         img.style.border = '10px solid lightgrey';
-         img.style.borderRadius = '20px';
- 
+          // Create the image element
+          const img = document.createElement('img');
+          img.src = room.image; // Set the image source
+          img.alt = `Image of ${room.name}`; // Set alt text
+  
+          // Add a class to the image element
+          img.classList.add('room-image');
+  
          // Append the image to the output container
          output.appendChild(img);
     }
 }
 
-// Function to apply styling to buttons
+// Function to apply styling to buttons 
 function styleButton(button) {
-    button.style.marginBottom = '15px';  // Add space between buttons
-    button.style.padding = '15px';        // Adjust padding for button size
-    button.style.backgroundColor = 'teal'; // Button background color
-    button.style.color = 'white';           // Button text color
-    button.style.border = '5px solid black';  // Adding a button border
-    button.style.cursor = 'pointer';   
+    button.classList.add('exit-button'); 
 }
 
 // Function to display the available exits
 function displayCurrentExits(room) {
-    const output = document.getElementById(outputHTMLid); // Ensure this is the correct ID
+    const output = document.getElementById(outputHTMLid); 
     if (output && room.exitOptions) {
-        // Create a container to hold the buttons and apply grid styling
+
+        // Create a container to hold the buttons
         const buttonContainer = document.createElement('div');
-        buttonContainer.style.display = 'grid';                  // Apply grid layout
-        buttonContainer.style.gridTemplateColumns = '1fr 1fr';   // 2 equal columns
-        buttonContainer.style.gap = '15px';                       // Space between buttons
-        buttonContainer.style.width = '100%';                     // Make sure it fills the container
-        buttonContainer.style.marginTop = '20px';                 // Optional: Adjust margin on top
+        buttonContainer.classList.add('button-container'); // Add the CSS class
 
         room.exitOptions.forEach(option => {
             // Create a button for each exit option
@@ -243,7 +268,7 @@ function displayCurrentExits(room) {
                 selectRoom(option.key, option.text, option.value);
             };
 
-            // Apply button styling
+            // Add styling to the button using a CSS class
             styleButton(button);
 
             // Append the button to the button container

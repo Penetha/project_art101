@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url('./img/default.png');
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sammy More</title>
+
+    <!-- Link to javascript file -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Include site-specific JS -->
+    <script type="text/javascript" src="./js/main.js" defer></script>
+
+    <!-- External CSS Files -->
+    <link rel="stylesheet" type="text/css" href="./css/project.css">
+    <link rel="stylesheet" type="text/css" href="./css/project2.css">
+    <link rel="stylesheet" type="text/css" href="./css/project3.css">
+
+    <!-- Typing Effect Script -->
+    <script>
+        function typeText(elementId, text) {
+            const element = document.getElementById(elementId);
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 30);
+                }
+            }
+            type();
+        }
+    </script>
+</head>
+<body>
+    <main id="intro">
+        <section>
+            <h2>Sammy More</h2>
+            <h1>A Journey Through The Woods</h1>
+            <div id="typed" style="font-size: 25px;">
+                <script>
+                    typeText('typed', " In this 'choose your own adventure' story, you will have to decide what path you will take by answering some questions. This will determine which UCSC College you are affiliated with!");
+                </script>
+            </div>
+        </section>
+
+        <section id="character-selection"> 
+            <div id="section1">
+                <h1>Choose Your Character</h1>
+                <p>Please select a character.</p>
+                <div class="character-img">
+                    <img src="img/character1.png" alt="Character 1" class="character" />
+                    <img src="img/character2.png" alt="Character 2" class="character" />
+                    <img src="img/character3.png" alt="Character 3" class="character" />
+                    <img src="img/character4.png" alt="Character 4" class="character" />
+                    <img src="img/character5.png" alt="Character 5" class="character" />
+                    <img src="img/character6.png" alt="Character 6" class="character" />
+                    <img src="img/character7.png" alt="Character 7" class="character" />
+                    <img src="img/character8.png" alt="Character 8" class="character" />
+                    <img src="img/character9.png" alt="Character 9" class="character" />
+                </div>
+                <h3 id="selected-character"></h3>
+                <div id="selection-message" style="display: none;">
+                    You have selected a character! Please scroll down to continue!
+                </div>
+            </div>
+        </section>
+
+        <section>
+                <div class="major section">
+                    <div class="container">
+                        <!-- Main output area for the game -->
+                        <div id="js-output"></div>
+                        <!-- Score display section -->
+                        <div id="score-display">
+                            Score: 0
+                        </div>
+                        <button id="continue-button" style="display: none;">Continue Forward</button>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <script>
+        // Add a click event listener to each character image
+        document.querySelectorAll('.character').forEach((character) => {
+            character.addEventListener('click', () => {
+                // Get the selected character's alt text and display it
+                const selectedCharacter = character.alt;
+                document.getElementById('selected-character').textContent = `Selected: ${selectedCharacter}`;
+                
+                // Show the selection message
+                document.getElementById('selection-message').style.display = 'block';
+                
+                // Hide the character selection section
+                document.getElementById('character-selection').style.display = 'none';
+                
+            });
+        });
+    </script>
+    
+
+    <!-- Howler.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+
+    <nav id="links">
+        <a href="./js/main.js">
+            <button id="js-source">JavaScript Source</button>
+        </a>
+    </nav>
+</body>
+</html>
