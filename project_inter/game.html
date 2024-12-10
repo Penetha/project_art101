@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="./css/project.css">
     <link rel="stylesheet" type="text/css" href="./css/project2.css">
     <link rel="stylesheet" type="text/css" href="./css/project3.css">
-
+    
     <!-- Typing Effect Script -->
     <script>
         function typeText(elementId, text) {
@@ -50,8 +50,8 @@
 <body>
     <main id="intro">
         <section>
-            <h2>Sammy More</h2>
-            <h1>A Journey Through The Woods</h1>
+            <h2 class="title">Sammy More</h2>
+            <h1 class="title">A Journey Through The Woods</h1>
             <div id="typed" style="font-size: 25px;">
                 <script>
                     typeText('typed', " In this 'choose your own adventure' story, you will have to decide what path you will take by answering some questions. This will determine which UCSC College you are affiliated with!");
@@ -61,8 +61,7 @@
 
         <section id="character-selection"> 
             <div id="section1">
-                <h1>Choose Your Character</h1>
-                <p>Please select a character.</p>
+                <h1 class="choose-character">Choose Your Character</h1>
                 <div class="character-img">
                     <img src="img/character1.png" alt="Character 1" class="character" />
                     <img src="img/character2.png" alt="Character 2" class="character" />
@@ -81,6 +80,8 @@
             </div>
         </section>
 
+        
+
         <section>
                 <div class="major section">
                     <div class="container">
@@ -94,6 +95,7 @@
                     </div>
                 </div>
         </section>
+        
     </main>
 
     <script>
@@ -102,10 +104,7 @@
             character.addEventListener('click', () => {
                 // Get the selected character's alt text and display it
                 const selectedCharacter = character.alt;
-                document.getElementById('selected-character').textContent = `Selected: ${selectedCharacter}`;
-                
-                // Show the selection message
-                document.getElementById('selection-message').style.display = 'block';
+                cument.getElementById('selection-message').style.display = 'block';
                 
                 // Hide the character selection section
                 document.getElementById('character-selection').style.display = 'none';
@@ -118,10 +117,10 @@
     <!-- Howler.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 
-    <nav id="links">
+    <!-- <nav id="links">
         <a href="./js/main.js">
             <button id="js-source">JavaScript Source</button>
         </a>
-    </nav>
+    </nav> -->
 </body>
 </html>
