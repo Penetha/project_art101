@@ -391,8 +391,8 @@ function displayFinalScore() {
        creditsContainer.innerHTML = `
             <p>Thank You For Playing!<p>
            <p>CREDITS:</p>
-            <p>Project Leader - Madison De La Merce <p>
-           <p>Art Design by John Conrad & Story by Dani Dayao <p> 
+            <p>Project Leader - Madison De La Merced <p>
+           <p>Art Design by John Conrad Toringan & Story by Dani Dayao <p> 
            <p>Technical Team - Kimberly Estrada, Deigo Garcia, Pennetha Jayakumar <p>
        `;
        output.appendChild(creditsContainer);
