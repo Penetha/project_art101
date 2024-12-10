@@ -15,31 +15,6 @@
             left: 0;
             z-index: -1;
         }
-        #music-controls {
-            position: fixed;
-            left: 95%;
-            top: 15px;
-        }
-
-        .music-button {
-            width: 40px; /* Width relative to viewport */
-            height: 40px; /* Height relative to viewport */
-            font-size: 30px; /* Icon size relative to viewport */
-            padding: 0;
-            border: none;
-            background-color: rgb(0, 79, 128);
-            color: black;
-            border-radius: 10%; /* Slightly rounded corners */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .music-button:hover {
-            background-color: rgb(5, 178, 178);
-        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="./css/project.css">
     <link rel="stylesheet" type="text/css" href="./css/project2.css">
     <link rel="stylesheet" type="text/css" href="./css/project3.css">
-
+    
     <!-- Typing Effect Script -->
     <script>
         function typeText(elementId, text) {
@@ -75,11 +50,8 @@
 <body>
     <main id="intro">
         <section>
-            <h2>Sammy More</h2>
-            <div id="music-controls">
-                <button id="music-button" class="music-button">&#9658;</button> <!-- Default is the play symbol -->
-            </div>
-            <h1>A Journey Through The Woods</h1>
+            <h2 class="title">Sammy More</h2>
+            <h1 class="title">A Journey Through The Woods</h1>
             <div id="typed" style="font-size: 25px;">
                 <script>
                     typeText('typed', " In this 'choose your own adventure' story, you will have to decide what path you will take by answering some questions. This will determine which UCSC College you are affiliated with!");
@@ -89,26 +61,26 @@
 
         <section id="character-selection"> 
             <div id="section1">
-                <h1>Choose Your Character</h1>
-                <p>Please select a character.</p>
+                <h1 class="choose-character">Choose Your Character</h1>
                 <div class="character-img">
-                    <img src="img/character1.png" alt="Character 1" class="character" data-id="1" />
-                    <img src="img/character2.png" alt="Character 2" class="character" data-id="2" />
-                    <img src="img/character3.png" alt="Character 3" class="character" data-id="3" />
-                    <img src="img/character4.png" alt="Character 4" class="character" data-id="4" />
-                    <img src="img/character5.png" alt="Character 5" class="character" data-id="5" />
-                    <img src="img/character6.png" alt="Character 6" class="character" data-id="6" />
-                    <img src="img/character7.png" alt="Character 7" class="character" data-id="7" />
-                    <img src="img/character8.png" alt="Character 8" class="character" data-id="8" />
-                    <img src="img/character9.png" alt="Character 9" class="character" data-id="9" />
+                    <img src="img/character1.png" alt="Character 1" class="character" />
+                    <img src="img/character2.png" alt="Character 2" class="character" />
+                    <img src="img/character3.png" alt="Character 3" class="character" />
+                    <img src="img/character4.png" alt="Character 4" class="character" />
+                    <img src="img/character5.png" alt="Character 5" class="character" />
+                    <img src="img/character6.png" alt="Character 6" class="character" />
+                    <img src="img/character7.png" alt="Character 7" class="character" />
+                    <img src="img/character8.png" alt="Character 8" class="character" />
+                    <img src="img/character9.png" alt="Character 9" class="character" />
                 </div>
                 <h3 id="selected-character"></h3>
                 <div id="selection-message" style="display: none;">
                     You have selected a character! Please scroll down to continue!
                 </div>
-
             </div>
         </section>
+
+        
 
         <section>
                 <div class="major section">
@@ -123,6 +95,7 @@
                     </div>
                 </div>
         </section>
+        
     </main>
 
     <script>
@@ -131,10 +104,7 @@
             character.addEventListener('click', () => {
                 // Get the selected character's alt text and display it
                 const selectedCharacter = character.alt;
-                document.getElementById('selected-character').textContent = `Selected: ${selectedCharacter}`;
-                
-                // Show the selection message
-                document.getElementById('selection-message').style.display = 'block';
+                cument.getElementById('selection-message').style.display = 'block';
                 
                 // Hide the character selection section
                 document.getElementById('character-selection').style.display = 'none';
@@ -147,10 +117,10 @@
     <!-- Howler.js library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
 
-    <nav id="links">
+    <!-- <nav id="links">
         <a href="./js/main.js">
             <button id="js-source">JavaScript Source</button>
         </a>
-    </nav>
+    </nav> -->
 </body>
 </html>
