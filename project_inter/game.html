@@ -15,6 +15,31 @@
             left: 0;
             z-index: -1;
         }
+        #music-controls {
+            position: fixed;
+            left: 95%;
+            top: 15px;
+        }
+
+        .music-button {
+            width: 40px; /* Width relative to viewport */
+            height: 40px; /* Height relative to viewport */
+            font-size: 30px; /* Icon size relative to viewport */
+            padding: 0;
+            border: none;
+            background-color: rgb(0, 79, 128);
+            color: black;
+            border-radius: 10%; /* Slightly rounded corners */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .music-button:hover {
+            background-color: rgb(5, 178, 178);
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,6 +76,9 @@
     <main id="intro">
         <section>
             <h2>Sammy More</h2>
+            <div id="music-controls">
+                <button id="music-button" class="music-button">&#9658;</button> <!-- Default is the play symbol -->
+            </div>
             <h1>A Journey Through The Woods</h1>
             <div id="typed" style="font-size: 25px;">
                 <script>
@@ -64,20 +92,21 @@
                 <h1>Choose Your Character</h1>
                 <p>Please select a character.</p>
                 <div class="character-img">
-                    <img src="img/character1.png" alt="Character 1" class="character" />
-                    <img src="img/character2.png" alt="Character 2" class="character" />
-                    <img src="img/character3.png" alt="Character 3" class="character" />
-                    <img src="img/character4.png" alt="Character 4" class="character" />
-                    <img src="img/character5.png" alt="Character 5" class="character" />
-                    <img src="img/character6.png" alt="Character 6" class="character" />
-                    <img src="img/character7.png" alt="Character 7" class="character" />
-                    <img src="img/character8.png" alt="Character 8" class="character" />
-                    <img src="img/character9.png" alt="Character 9" class="character" />
+                    <img src="img/character1.png" alt="Character 1" class="character" data-id="1" />
+                    <img src="img/character2.png" alt="Character 2" class="character" data-id="2" />
+                    <img src="img/character3.png" alt="Character 3" class="character" data-id="3" />
+                    <img src="img/character4.png" alt="Character 4" class="character" data-id="4" />
+                    <img src="img/character5.png" alt="Character 5" class="character" data-id="5" />
+                    <img src="img/character6.png" alt="Character 6" class="character" data-id="6" />
+                    <img src="img/character7.png" alt="Character 7" class="character" data-id="7" />
+                    <img src="img/character8.png" alt="Character 8" class="character" data-id="8" />
+                    <img src="img/character9.png" alt="Character 9" class="character" data-id="9" />
                 </div>
                 <h3 id="selected-character"></h3>
                 <div id="selection-message" style="display: none;">
                     You have selected a character! Please scroll down to continue!
                 </div>
+
             </div>
         </section>
 

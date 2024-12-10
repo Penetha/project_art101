@@ -163,10 +163,34 @@ var backgroundMusic = new Howl({
     src: ['./sound/woods.mp3'],
     loop: true,
 });
-document.addEventListener('click', function() {
-    // Play the background music when the user interacts with the page.
-    backgroundMusic.play();
-  })
+
+let isPlaying = false;
+
+// Handle play/pause button click
+$('#music-button').click(function () {
+    if (isPlaying) {
+        backgroundMusic.pause();
+        $(this).html('&#9658;'); // Play symbol
+    } else {
+        backgroundMusic.play();
+        $(this).html('&#10074;&#10074;'); // Pause symbol
+    }
+    isPlaying = !isPlaying; // Toggle the playing state
+});
+
+// Autoplay policies: play music after user interaction
+$(document).one('click', function () {
+    if (!isPlaying) {
+        backgroundMusic.play();
+        $('#music-button').html('&#10074;&#10074;'); // Pause symbol
+        isPlaying = true;
+    }
+});
+
+// document.addEventListener('click', function() {
+//     // Play the background music when the user interacts with the page.
+//     backgroundMusic.play();
+//   })
 
 // Function to display the room description in a container with a border
 function displayRoomDescription() {
@@ -393,3 +417,5 @@ window.onload = function () {
     }
     newRoom(currentRoom);
 };
+
+

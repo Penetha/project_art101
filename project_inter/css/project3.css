@@ -39,14 +39,16 @@ p{
 #score-display {
     margin-top: 10px;
     color: white;
+    text-shadow: 1px 0 0px #41838e, 0px 2px 0px #274f55, 0px 0px 1px teal;
     font-weight: bold;
     font-size: 24px;
-    position: fixed;
+    position: relative;
     width: 100px;
     font-style: normal;
     padding: 5px 10px;
     border-radius: 5px;
-    left: 80%;
+    background-image: linear-gradient(to top, #41608e, #2e4363, #131d2b, #000000);
+    left: 90%;
     bottom: 10px;
     height: 40px;
 }
@@ -55,6 +57,8 @@ p{
     max-width: 100%;
     height: auto;
     border-radius: 8px; 
+    animation: zoomInOut 10s ease-in-out infinite; /* Animation on load */
+
 }
 
 .room-description {
@@ -96,13 +100,34 @@ p{
     font-style: normal;
 }
 
+/* Keyframes for Zoom-In and Zoom-Out */
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    25% {
+        transform: scale(1.05); /* Slight zoom-in */
+    }
+    50% {
+        transform: scale(1); /* Back to normal size */
+    }
+    75% {
+        transform: scale(0.9); /* Slight zoom-out */
+    }
+    100% {
+        transform: scale(1); /* Back to normal size */
+    }
+}
+
 .room-image{
     display: block; 
     margin: 0 auto;
     max-width: 75%; 
     border: 10px solid lightgrey; 
     border-radius: 20px;
+    animation: zoomInOut 10s ease-in-out infinite; /* Animation on load */
 }
+
 
 .button-container {
     display: grid;                
@@ -118,8 +143,17 @@ p{
     background-color: teal;        
     color: white;               
     border: 5px solid black;  
-    cursor: pointer;              
+    cursor: pointer;             
 }
+
+.exit-button:hover {
+    background-color: rgb(5, 178, 178);
+    text-shadow: 2px 0 0px #165514, 0px 2px 0px teal, 0px 0px 1px rgb(28, 235, 235);
+    font-size: large;
+    color: rgb(236, 248, 170);
+}
+
+
 
 .credits-container{
     font-size: 12px;

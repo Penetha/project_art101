@@ -1,32 +1,37 @@
+html{
+    font-size: 16px; /* Default root font size in px for fallback */
+}
+
 body{
+    font-size: 1rem;
     background-repeat: no-repeat;
     background-size: cover;
 }
 #typed{
-    font-size: 35px;
+    font-size: 2.1875rem; /* 35px as rem */
     color: white;
     text-align: center;
 }
 
-h1{
+h1 {
     justify-content: center;
-    font-size: 60px;
+    font-size: 3.75rem; /* 60px as rem */
     color: white;
     text-align: center;
-  font-family: "Doto", sans-serif;
-  font-optical-sizing: auto;
-  font-variation-settings:"ROND" 0;
-  font-weight: bold;
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "ROND" 0;
+    font-weight: bold;
 }
 
-#next{
+#next {
     position: fixed;
-    bottom: 20px;
+    bottom: 1.25rem; /* 20px as rem */
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;
-    height: 50px;
-    font-size: 20px;
-    border-radius: 15px;
+    width: 12.5rem; /* 200px as rem */
+    height: 3.125rem; /* 50px as rem */
+    font-size: 1.25rem; /* 20px as rem */
+    border-radius: 0.9375rem; /* 15px as rem */
     border-style: dotted;
 }
